@@ -24,21 +24,5 @@ namespace QuizAPI.Models
         public DateTime Date { get; set; }
 
     }
-    public static class GameExtensions
-    {
-        public static GameDTO ToDto(this Game item)
-        {
-            return new GameDTO
-            {
-                Id = item.Id,
-                Score = item.Score,
-                CorrectAnswer = item.CorrectAnswer,
-                WrongAnswer = item.WrongAnswer,
-                Email = item.Email,
-                Date = item.Date
 
-            };
-        }
-
-    }
 }

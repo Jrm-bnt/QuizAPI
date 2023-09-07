@@ -34,7 +34,7 @@ namespace QuizAPI.Controllers
 
         // GET: api/Game/5
         [HttpGet("{id}")]
-        public async Task<ActionResult<Game>> GetGame(long id)
+        public async Task<ActionResult<Game>> GetGame(int id)
         {
             //Vérfifier si la table existe
             if (_contextGame.Games == null)
@@ -71,7 +71,7 @@ namespace QuizAPI.Controllers
 
 
 
-        private bool GameExists(long id)
+        private bool GameExists(int id)
         {
             return (_contextGame.Games?.Any(e => e.Id == id)).GetValueOrDefault();
         }

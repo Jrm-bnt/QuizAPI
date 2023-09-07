@@ -34,7 +34,7 @@ namespace QuizAPI.Controllers
 
         // GET: api/TodoItems/5
         [HttpGet("{id}")]
-        public async Task<ActionResult<Question>> GetQuestionItem(long id)
+        public async Task<ActionResult<Question>> GetQuestionItem(int id)
         {
             //Vérfifier si la table existe
             if (_contextQuestion.Questions == null)
@@ -57,7 +57,7 @@ namespace QuizAPI.Controllers
         // PUT: api/TodoItems/5
         // To protect from overposting attacks, see https://go.microsoft.com/fwlink/?linkid=2123754
         [HttpPut("{id}")]
-        public async Task<IActionResult> PutTodoItem(long id, Question questionItem)
+        public async Task<IActionResult> PutTodoItem(int id, Question questionItem)
         {
             if (id != questionItem.Id)
             {
@@ -125,7 +125,7 @@ namespace QuizAPI.Controllers
         /// <param name="id">ID de l'item</param>
         /// <returns></returns>
         [HttpDelete("{id}")]
-        public async Task<IActionResult> DeleteQuestionItem(long id)
+        public async Task<IActionResult> DeleteQuestionItem(int id)
         {
             if (_contextQuestion.Questions == null)
             {
@@ -143,7 +143,7 @@ namespace QuizAPI.Controllers
             return NoContent();
         }
 
-        private bool QuestionItemExists(long id)
+        private bool QuestionItemExists(int id)
         {
             return (_contextQuestion.Questions?.Any(e => e.Id == id)).GetValueOrDefault();
         }
