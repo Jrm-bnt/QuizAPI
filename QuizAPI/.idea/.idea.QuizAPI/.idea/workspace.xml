@@ -9,16 +9,23 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="102361ec-1acc-45e9-bb83-ab420370380d" name="Changes" comment="">
-      <change beforePath="$PROJECT_DIR$/.idea/.idea.QuizAPI/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.idea.QuizAPI/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/QuizAPI/Controllers/GameController.cs" beforeDir="false" afterPath="$PROJECT_DIR$/QuizAPI/Controllers/GameController.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/QuizAPI/Controllers/QuestionController.cs" beforeDir="false" afterPath="$PROJECT_DIR$/QuizAPI/Controllers/QuestionController.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/QuizAPI/Models/Game.cs" beforeDir="false" afterPath="$PROJECT_DIR$/QuizAPI/Models/Game.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../.gitignore" beforeDir="false" afterPath="$PROJECT_DIR$/../.gitignore" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.editorconfig" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/.idea.QuizAPI/.idea/encodings.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/.idea.QuizAPI/.idea/indexLayout.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/.idea.QuizAPI/.idea/projectSettingsUpdater.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/.idea.QuizAPI/.idea/vcs.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/.idea.QuizAPI/.idea/workspace.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/QuizAPI.sln" beforeDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
     <option name="LAST_RESOLUTION" value="IGNORE" />
   </component>
+  <component name="ProjectColorInfo"><![CDATA[{
+  "associatedIndex": 7
+}]]></component>
   <component name="ProjectId" id="2V4GSK69eTbKCjlRBj1FQU5SQb2" />
   <component name="ProjectViewState">
     <option name="hideEmptyMiddlePackages" value="true" />
@@ -85,6 +92,7 @@
       <updated>1694087942749</updated>
       <workItem from="1694087943749" duration="830000" />
       <workItem from="1694095303402" duration="801000" />
+      <workItem from="1694158871635" duration="246000" />
     </task>
     <servers />
   </component>
