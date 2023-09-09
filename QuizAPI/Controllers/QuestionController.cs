@@ -21,7 +21,6 @@ namespace QuizAPI.Controllers
             _contextQuestion = context;
         }
 
-        // GET: api/TodoItems
         [HttpGet]
         public async Task<ActionResult<IEnumerable<Question>>> GetQuestionItems()
         {
@@ -32,7 +31,6 @@ namespace QuizAPI.Controllers
             return await _contextQuestion.Questions.ToListAsync();
         }
 
-        // GET: api/TodoItems/5
         [HttpGet("{id}")]
         public async Task<ActionResult<Question>> GetQuestionItem(int id)
         {
@@ -50,10 +48,9 @@ namespace QuizAPI.Controllers
             return questionItem;
         }
 
-        // PUT: api/TodoItems/5
         // To protect from overposting attacks, see https://go.microsoft.com/fwlink/?linkid=2123754
         [HttpPut("{id}")]
-        public async Task<IActionResult> PutTodoItem(int id, Question questionItem)
+        public async Task<IActionResult> PutQuestionItem(int id, Question questionItem)
         {
             if (id != questionItem.Id)
             {
@@ -81,7 +78,6 @@ namespace QuizAPI.Controllers
             return NoContent();
         }
 
-        // POST: api/TodoItems
         // To protect from overposting attacks, see https://go.microsoft.com/fwlink/?linkid=2123754
         /// <summary>
         /// Créer une tâche à faire 
@@ -89,7 +85,7 @@ namespace QuizAPI.Controllers
         /// <remarks>
         /// Sample request : 
         /// 
-        ///     POST /TodoItems
+        ///     POST /QuestionItems
         ///     {
         ///         "id":1,
         ///         "name":"Item1",
@@ -98,23 +94,19 @@ namespace QuizAPI.Controllers
         ///     
         /// </remarks>
         /// <param name="questionItem"></param>
-        /// <returns>A newly created todo items</returns>
+        /// <returns>A newly created question items</returns>
         /// <response code="201">Returns the newly created item</response>
         /// <response code="400">If the item is null</response>
         [HttpPost]
-        public async Task<ActionResult<Question>> PostTodoItem(Question questionItem)
+        public async Task<ActionResult<Question>> PostQuestionItem(Question questionItem)
         {
-            if (_contextQuestion.Questions == null)
-            {
-                return Problem("Entity set 'TodoContext.TodoItems'  is null.");
-            }
+
             _contextQuestion.Questions.Add(questionItem);
             await _contextQuestion.SaveChangesAsync();
 
             return CreatedAtAction(nameof(GetQuestionItem), new { id = questionItem.Id }, questionItem);
         }
 
-        // DELETE: api/TodoItems/5
         /// <summary>
         /// Cette méthode sert à supprimer
         /// </summary>
@@ -127,13 +119,13 @@ namespace QuizAPI.Controllers
             {
                 return NotFound();
             }
-            var todoItem = await _contextQuestion.Questions.FindAsync(id);
-            if (todoItem == null)
+            var questionItem = await _contextQuestion.Questions.FindAsync(id);
+            if (questionItem == null)
             {
                 return NotFound();
             }
 
-            _contextQuestion.Questions.Remove(todoItem);
+            _contextQuestion.Questions.Remove(questionItem);
             await _contextQuestion.SaveChangesAsync();
 
             return NoContent();

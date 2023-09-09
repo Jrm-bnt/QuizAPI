@@ -36,21 +36,16 @@ namespace QuizAPI.Controllers
         [HttpGet("{id}")]
         public async Task<ActionResult<Game>> GetGame(int id)
         {
-            //Vérfifier si la table existe
             if (_contextGame.Games == null)
             {
                 return NotFound();
             }
-            //Cherche l'objet
             var game = await _contextGame.Games.FindAsync(id);
 
-            //On vérifie si l'objet existe
             if (game == null)
             {
                 return NotFound();
             }
-
-            //On retourne l'objet
             return game;
         }
 
@@ -59,21 +54,11 @@ namespace QuizAPI.Controllers
         [HttpPost]
         public async Task<ActionResult<Game>> PostGame(Game game)
         {
-            if (_contextGame.Games == null)
-            {
-                return Problem("Entity set 'TodoContext.TodoItems'  is null.");
-            }
             _contextGame.Games.Add(game);
             await _contextGame.SaveChangesAsync();
 
             return CreatedAtAction(nameof(GetGame), new { id = game.Id }, game);
         }
 
-
-
-        private bool GameExists(int id)
-        {
-            return (_contextGame.Games?.Any(e => e.Id == id)).GetValueOrDefault();
-        }
     }
 }
