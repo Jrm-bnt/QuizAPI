@@ -36,21 +36,17 @@ namespace QuizAPI.Controllers
         [HttpGet("{id}")]
         public async Task<ActionResult<Question>> GetQuestionItem(int id)
         {
-            //Vérfifier si la table existe
             if (_contextQuestion.Questions == null)
             {
                 return NotFound();
             }
-            //Cherche l'objet
             var questionItem = await _contextQuestion.Questions.FindAsync(id);
 
-            //On vérifie si l'objet existe
             if (questionItem == null)
             {
                 return NotFound();
             }
 
-            //On retourne l'objet
             return questionItem;
         }
 

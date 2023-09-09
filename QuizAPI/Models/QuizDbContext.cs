@@ -10,5 +10,7 @@ namespace QuizAPI.Models
 
         public DbSet<Game> Games { get; set; }
         public DbSet<Question> Questions { get; set; }
+        public DbSet<Users> Users { get; set; }
+
     }
 }
