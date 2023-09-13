@@ -15,7 +15,16 @@ namespace QuizAPI.Controllers
         {
             _context = context;
         }
-
+        // POST: api/User/register
+        /// <summary>
+        /// Enregistre un nouvel utilisateur avec l'e-mail et le mot de passe fournis.
+        /// </summary>
+        /// <param name="userLogin">Les informations d'inscription de l'utilisateur.</param>
+        /// <returns>Une réponse HTTP indiquant le succès de l'enregistrement.</returns>
+        /// <response code="200">L'enregistrement a réussi.</response>
+        /// <response code="400">Si les données d'inscription sont invalides ou si l'e-mail est déjà utilisé.</response>
+        /// <response code="500">Si une erreur interne au serveur se produit.</response>
+        /// <response code="403">Si l'utilisateur n'est pas autorisé à accéder à la ressource.</response>
         [AllowAnonymous]
         [HttpPost("register")]
         public IActionResult Register([FromBody] UserLoginModel userLogin)

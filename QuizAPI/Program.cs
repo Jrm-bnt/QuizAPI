@@ -32,14 +32,15 @@ builder.Services.AddSwaggerGen(c =>
     {
         Version = "V1",
         Title = "Quiz API",
-        Description = "A simple example ASP.NET Core Web API",
-        TermsOfService = new Uri("https://google.com"),
-        Contact = new Microsoft.OpenApi.Models.OpenApiContact
-        {
-            Name = " Elmeddahi Mohamed & Brenet Jérémy",
-            Email = "jeremy.brenet@campus-igs-toulouse.fr",
-            Url = new Uri("https://google.com")
-        }
+        Description = "Bienvenue dans l'API Quiz, un outil interactif pour créer, jouer et suivre des jeux de quiz en ligne. Cette API vous permet de réaliser les actions suivantes :"
+    + "\n\n- Créer des jeux de quiz interactifs."
+    + "\n- Ajouter des questions à ces jeux."
+    + "\n- Découvrer le gagnant grâce au systeme de points"
+    + "\n- Gérer l'historique des parties."
+    + "\n- S'identifier afin de gérer ses propres questions et parties."
+    + "\n\nProfitez de cette API pour enrichir vos cours, défier vos amis ou organiser des quiz en ligne passionnants."
+    + "\n\nPour plus d'informations, contactez Elmeddahi Mohamed & Brenet Jérémy à l'adresse jeremy.brenet@campus-igs-toulouse.fr - m.elmeddahi@campus-igs-toulouse.fr"
+    + "\n\nDécouvrez notre site web : [Quiz API](https://jrm-bnt.github.io/react-github-pages/#/login)",
     });
 
     var xmlFile = $"{Assembly.GetExecutingAssembly().GetName().Name}.xml";

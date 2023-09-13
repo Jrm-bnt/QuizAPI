@@ -21,7 +21,17 @@ namespace QuizAPI.Controllers
             _context = context;
             _config = config;
         }
-
+        // POST: api/Login/authenticate
+        /// <summary>
+        /// Authentifie un utilisateur et génère un jeton JWT s'il est valide.
+        /// </summary>
+        /// <param name="userLogin">Les informations de connexion de l'utilisateur.</param>
+        /// <returns>Un jeton JWT en cas d'authentification réussie.</returns>
+        /// <response code="200">L'utilisateur a été authentifié avec succès.</response>
+        /// <response code="400">Si les données d'authentification sont invalides.</response>
+        /// <response code="401">Si l'utilisateur n'est pas autorisé à accéder à la ressource.</response>
+        /// <response code="500">Si une erreur interne au serveur se produit.</response>
+        /// <response code="403">Si l'utilisateur n'est pas autorisé à accéder à la ressource.</response>
         [AllowAnonymous]
         [HttpPost("authenticate")]
         public IActionResult Authenticate([FromBody] UserLoginModel userLogin)
