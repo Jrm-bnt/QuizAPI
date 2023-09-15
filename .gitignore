@@ -33,8 +33,6 @@ bld/
 [Ll]og/
 [Ll]ogs/
 
-appsettings.json
-
 # Visual Studio 2015/2017 cache/options directory
 .vs/
 .idea/*
